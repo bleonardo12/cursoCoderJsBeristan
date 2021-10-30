@@ -9,15 +9,15 @@
 
 //Desafio 2
 
-const nombreUsuario = prompt("Ingrese su nombre y apellido");
-const edadUsuario = prompt("Ingresa tu edad");
-const documentoIdentidad = prompt("Ingrese su Dni");
+// const nombreUsuario = prompt("Ingrese su nombre y apellido");
+// const edadUsuario = prompt("Ingresa tu edad");
+// const documentoIdentidad = prompt("Ingrese su Dni");
 
-if (edadUsuario >= 16) {
-    alert("Puede votar");
-} else {
-    alert("No puede votar");
-}
+// if (edadUsuario >= 16) {
+//     alert("Puede votar");
+// } else {
+//     alert("No puede votar");
+// }
 
 // Notas del colegio
 
@@ -64,3 +64,122 @@ if (edadUsuario >= 16) {
 
 // console.log(`Bienvenido al sistema: ${usuario}`);
 // }
+
+// clase 3 y 4 bucles
+// const usuarioReg = "Juan Carlo";
+// const passReg = "1234";
+// const error = 0;
+
+// for (let i = 0; i < 10; i = i + 1) {
+//     const usuario = prompt("Ingrese su usuario");
+//     const pass = prompt("Ingrese su contraseña");
+//     if (usuario == usuarioReg && pass == passReg) {
+//         console.log("Bienvenido al sistema");
+//         break;
+//     } else {
+//         console.log("Error:" + i);
+//         error = error + 1;
+//         if (error == 3) {
+//             console.log("Chau tarjeta");
+//             break;
+//         }
+//     }
+// }
+
+// CREAR UN PROGRAMA PARA LA VOTACION DE UN CLUB DE BARRIO
+// NO SE SABE CUANTAS PERSONAS VAN A VOTAR (USAR CONDICION POR EJ. USUARIO == ESC PARA FINALIZAR)
+// SE PUEDE VOTAR POR EL PARTIDO A Y B
+
+// var nombreUsuario = prompt("Ingrese su nombre");
+// let voto = prompt("Ingrese su vot A o B");
+
+// while (voto != "ESC") {
+//     console.log("Voto por:" + voto);
+//     voto = prompt("Ingrese su voto:A o B");
+// }
+
+// clase 4
+// function saludar() {
+//     let usuario = prompt("Ingrese su nombre");
+//     let edad = prompt("Ingrese su edad");
+//     console.log("Hola " + usuario);
+//     console.log("Usted tiene: " + edad + "años");
+// }
+
+// saludar();
+
+// function suma() {
+//     let numeroA = parseInt(prompt("Ingrese numero A"));
+//     let numeroB = parseInt(prompt("Ingrese numero B"));
+//     let total = numeroA + numeroB;
+//     console.log("El total es: " + total);
+// }
+
+// // suma();
+// function saludar(nombreUsuario, edadUsuario) {
+//     console.log("HOLA " + nombreUsuario);
+// }
+// function anioNacimiento(edad) {
+//     edad = parseInt(edad);
+//     console.log(2021 - edad);
+// }
+// let usuario = prompt("Ingrese su nombre de usuario");
+// let edad = prompt("Ingrese su edad");
+
+// saludar(usuario);
+// anioNacimiento(edad);
+
+// function validarNombre(nombreUsuario) {
+//     if (nombreUsuario != "") {
+//         console.log("TODO OK");
+//     } else {
+//         console.log("STRING VACIO");
+//     }
+// }
+
+// let usuario = prompt("ingrese su usuario");
+// validarNombre(usuario);
+
+// function validarEdad(edadUsuario) {
+//     if (edadUsuario >= 18) {
+//         console.log("OK");
+//     } else {
+//         console.log("NO PUEDE INGRESAR");
+//     }
+// }
+// let edad = parseFloat(prompt("Ingrese su edad"));
+
+// validarEdad(edad);
+
+// CREAR UN PROGRAMA QUE CALCULE LOS DESCUENTOS EN UN PRECIO
+// DESCUENTO : LUNES 5%, MIERCOLES 15%, SABADO 20%.
+// IVA : 21 % SOBRE PRECIO;
+// CALCULAR EL PRECIO FINAL
+
+// function descuento(precio) {
+//     if (dia == "Lunes") {
+//         let = descuentoPrecio = precio * 0.05;
+
+//         return descuentoPrecio;
+//     } else if (dia == "Miercoles") {
+//         let = descuentoPrecio = precio * 0.15;
+
+//         return descuentoPrecio;
+//     } else if (dia == "Sabado") {
+//         let = descuentoPrecio = precio * 0.2;
+
+//         return descuentoPrecio;
+//     }
+// }
+
+// function iva( precio ){
+//   let iva = precio * 0.21;
+//   precio = precio + iva;
+//   return = precio;
+// }
+
+// let numeroA = parseInt("Ingrese el monto");
+// let dia = prompt("Ingrese el dia de la compra");
+
+// let resultado = ( precio - descuento(precio, dia)) + iva
+// console.log(resultado);
