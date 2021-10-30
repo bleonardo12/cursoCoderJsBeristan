@@ -1,21 +1,23 @@
 // Desafio 1
-const nombreUsuario = prompt("Ingrese su nombre");
-const ingreseCuit = prompt("Cuit/Cuil");
-const montoFinal = prompt("Ingrese monto final");
-const porcentajeDivisor = prompt("Ingrese numero divisor");
-const total = (montoFinal * porcentajeDivisor) / 100;
+// const nombreUsuario = prompt("Ingrese su nombre");
+// const ingreseCuit = prompt("Cuit/Cuil");
+// const montoFinal = prompt("Ingrese monto final");
+// const porcentajeDivisor = prompt("Ingrese numero divisor");
+// const total = (montoFinal * porcentajeDivisor) / 100;
 
-alert("Resultado:" + total);
+// alert("Resultado:" + total);
 
-// votacion
+//Desafio 2
 
-// let edadUsuario = prompt("Ingresa tu edad");
+const nombreUsuario = prompt("Ingrese su nombre y apellido");
+const edadUsuario = prompt("Ingresa tu edad");
+const documentoIdentidad = prompt("Ingrese su Dni");
 
-// if (edadUsuario >= 16) {
-//     console.log("Puede votar");
-// } else {
-//     console.log("No puede votar");
-// }
+if (edadUsuario >= 16) {
+    alert("Puede votar");
+} else {
+    alert("No puede votar");
+}
 
 // Notas del colegio
 
