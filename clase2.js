@@ -33,3 +33,53 @@
 //     console.log(numero);
 //     // Si el ingreso no resulta un numero, se interrumpe el ciclo
 // } while (parseInt(numero));
+
+// Solicitar al usuario que ingrese el precio de costo del producto al cual se le va a aplicar el iva
+// while (true) {
+//     var precioCosto = parseFloat(
+//         prompt("Ingrese el precio de costo del producto")
+//     );
+
+//     if (!isNaN(precioCosto) && precioCosto != null && precioCosto != "") {
+//         // alert('es numero');
+//         break;
+//     } else {
+//         alert("no es numero");
+//         continue;
+//     }
+// }
+// precioCostoM = precioCosto.toFixed(2);
+// alert("El precio del producto a calcular es: " + precioCostoM);
+// console.log("El precio del producto a calcular es: " + precioCostoM);
+
+// // sumar IVA al producto
+// function calcularIva(precioCosto) {
+//     return precioCosto * 0.21;
+// }
+
+// var iva = calcularIva(precioCosto);
+// ivaM = iva.toFixed(2);
+
+// alert("El IVA del producto ingresado es: " + ivaM);
+// console.log("El IVA del producto ingresado es: " + ivaM);
+
+// // Sumarle el iva al precio del producto con IVA
+// function sumarIva(precioCosto) {
+//     return precioCosto + precioCosto * 0.21;
+// }
+
+// var precioConIva = sumarIva(precioCosto);
+// precioConIvaM = precioConIva.toFixed(2);
+
+// alert("El precio del producto con IVA incluido es: " + precioConIvaM);
+// console.log("El precio del producto con IVA incluido es: " + precioConIvaM);
+
+// // calcular precio sugerido de venta
+// function calcularPrecioVenta(precioConIva) {
+//     return precioConIva * 1.25;
+// }
+// var precioVenta = calcularPrecioVenta(precioConIva);
+// precioVentaM = precioVenta.toFixed(2);
+
+// alert("El precio sugerido de venta del producto es: " + precioVentaM);
+// console.log("El precio sugerido de venta del producto es: " + precioVentaM);
