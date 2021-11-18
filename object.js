@@ -174,6 +174,7 @@
 // console.log(alumnos);
 
 // NESTED ARRAYS
+// ARRAY ORDENADO
 
 // let indumentaria = [
 //     {
@@ -224,35 +225,56 @@
 //     },
 // ];
 
+// indumentaria.sort((a, b) => {
+//   if (a.producto < b.producto) {
+//       return -1;
+//   }
+//   if (a.producto > b.producto) {
+//       return 1;
+//   }
+//   return 0;
+// });
+
 // console.log(indumentaria);
 
-// class indumentaria {
-//     constructor(marca, talle, color, precio, stock) {
-//         this.marca = marca;
-//         this.talle = talle;
-//         this.color = color;
-//         this.precio = precio;
-//         this.stock = stock;
-//     }
-// }
+// ARRAY ORDENADO 2
+class indumentaria {
+    constructor(marca, talle, color, precio, stock) {
+        this.marca = marca;
+        this.talle = talle;
+        this.color = color;
+        this.precio = precio;
+        this.stock = stock;
+    }
+}
 
-// let listaDeIndumentaria = [];
+const listaDeIndumentaria = [];
 
-// for (let i = 0; i < 5; i++) {
-//     let producto = prompt("Ingrese el producto de indumentaria: ");
-//     let marca = prompt("Ingrese la marca: ");
-//     let talle = prompt("Ingrese el talle: ");
-//     let color = prompt("Ingrese el color: ");
-//     let precio = prompt("Ingrese el precio: ");
-//     let stock = prompt("Ingrese el stock: ");
+for (let i = 0; i < 2; i++) {
+    let producto = prompt("Ingrese el producto de indumentaria: ");
+    let marca = prompt("Ingrese la marca: ");
+    let talle = prompt("Ingrese el talle: ");
+    let color = prompt("Ingrese el color: ");
+    let precio = prompt("Ingrese el precio: ");
+    let stock = prompt("Ingrese el stock: ");
 
-//     listaDeIndumentaria.push(
-//         new indumentaria(producto, marca, talle, color, precio, stock)
-//     );
-// }
+    listaDeIndumentaria.push(
+        new indumentaria(producto, marca, talle, color, precio, stock)
+    );
+}
 
-// console.log(listaDeIndumentaria);
+for (let indumentaria of listaDeIndumentaria) {
+    console.log(indumentaria.producto);
+}
 
-// for (let indumentaria of listaDeIndumentaria) {
-//     console.log(indumentaria.producto);
-// }
+listaDeIndumentaria.sort((a, b) => {
+    if (a.producto < b.producto) {
+        return -1;
+    }
+    if (a.producto > b.producto) {
+        return 1;
+    }
+    return 0;
+});
+
+console.log(listaDeIndumentaria);
