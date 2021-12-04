@@ -93,7 +93,7 @@ let calza = new indumentaria(
 
 console.log(calza);
 
-FOR IN
+// FOR IN
 
 function indumentaria(calza, stock, valor) {
     this.calza = calza;
@@ -119,7 +119,7 @@ for (let datos in calzaAdidas) {
     console.log(calzaAdidas[datos]);
 }
 
-CLASES
+// CLASES
 
 class indumentaria {
     constructor(marca, talle, color, precio, stock) {
@@ -140,7 +140,7 @@ let nuevaIndumentaria = new indumentaria("Diadora", "S", "Rosa", 2000, 20);
 console.log(nuevaIndumentaria);
 nuevaIndumentaria.calza;
 
-ARRAY
+// ARRAY
 let indumentaria = [
     "Calzas",
     "Buzos",
@@ -159,7 +159,7 @@ for (let i = 0; i < indumentaria.length; i++) {
     );
 }
 
-FOR + PUSH
+// FOR + PUSH
 
 let nombreAlumno;
 let alumnos = [];
@@ -173,8 +173,8 @@ console.log(alumnos);
 alumnos.push("Carlos");
 console.log(alumnos);
 
-NESTED ARRAYS
-ARRAY ORDENADO
+// NESTED ARRAYS
+// ARRAY ORDENADO
 
 let indumentaria = [
     {
@@ -226,13 +226,13 @@ let indumentaria = [
 ];
 
 indumentaria.sort((a, b) => {
-  if (a.producto < b.producto) {
-      return -1;
-  }
-  if (a.producto > b.producto) {
-      return 1;
-  }
-  return 0;
+    if (a.producto < b.producto) {
+        return -1;
+    }
+    if (a.producto > b.producto) {
+        return 1;
+    }
+    return 0;
 });
 
 console.log(indumentaria);

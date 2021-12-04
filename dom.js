@@ -1,26 +1,33 @@
-// aqui se pone en practica DOM
+const boton = document.getElementById("boton");
 
-const titulo = document.getElementById("titulo");
-console.log(titulo);
+boton.addEventListener("click", function () {
+    console.log("Gracias por su compra");
+});
 
-const div1 = document.getElementsByClassName("div1");
-console.log(div1);
+boton.addEventListener("mouseover", saludar);
 
-const li = document.getElementsByTagName("li");
-console.log(li);
-
-for (let elementos of li) {
-    console.log(elementos);
+function saludar() {
+    console.log("Mouse move");
 }
 
-const p = document.createElement("p");
-p.textContent = "Aprobame que lo saco adelante de a poco";
+boton.addEventListener("mousedown", function (e) {
+    console.log(e.button);
+    if (e.button == 0) {
+        console.log("BOTON IZQ");
+    } else if (e.button == 1) {
+        console.log("boton ruidita");
+    } else if (e.button == 2) {
+        console.log("Boton derecha");
+    }
+});
 
-console.log(p);
+let botonForm = document.getElementById("botonForm");
+botonForm.addEventListener("click", function () {
+    const usuario = document.getElementById("usuario");
+    const pass = document.getElementById("pass");
+    console.log(usuario);
+    console.log(pass);
+});
 
-const contenedor = document.getElementById("contenedor");
-
-contenedor.appendChild(p);
-
-p.style.color = "red";
-p.style.fontSize = "40px";
+const botonComprar = document.querySelectorAll("botonComprar");
+console.log("botonComprar");
