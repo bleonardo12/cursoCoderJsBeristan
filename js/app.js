@@ -127,3 +127,24 @@ function eliminarPlatilloLocalStorage(platillo) {
 function vaciarLocalStorage() {
     localStorage.clear();
 }
+
+// JQUERY
+
+$("h2").css({ "background-color": "black" });
+$("#subTitle1").css({ "background-color": "black" });
+
+$("#btn-hide").click(function () {
+    $("#lista-platillos").hide();
+});
+
+$("#btn-show").click(function () {
+    $("#lista-platillos").show();
+});
+
+$("#btn-hide2").click(function () {
+    $("h1").toggleClass("blue");
+});
+
+$("#btn-show2").click(function () {
+    $("h1").toggleClass("red");
+});
