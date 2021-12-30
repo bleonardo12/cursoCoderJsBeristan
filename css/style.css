@@ -174,3 +174,13 @@ ul {
     margin-bottom: 10px;
     text-decoration: none;
 }
+
+.textColor {
+    color: antiquewhite;
+}
+
+.img2 {
+    float: right;
+    position: relative;
+    bottom: 20px;
+}

@@ -134,11 +134,11 @@ $("h2").css({ "background-color": "black" });
 $("#subTitle1").css({ "background-color": "black" });
 
 $("#btn-hide").click(function () {
-    $("#lista-platillos").hide();
+    $("#lista-platillos").fadeIn(2000);
 });
 
 $("#btn-show").click(function () {
-    $("#lista-platillos").show();
+    $("#lista-platillos").fadeOut(2000);
 });
 
 $("#btn-hide2").click(function () {
@@ -147,4 +147,69 @@ $("#btn-hide2").click(function () {
 
 $("#btn-show2").click(function () {
     $("h1").toggleClass("red");
+});
+
+$("h4").css("background-color", "orange");
+$("h4").css("width", "40%");
+$("h4").css("font-size", "20px");
+
+// GEOLOCATION
+
+let ubicacion = navigator.geolocation.getCurrentPosition(mostrarUbicacion);
+
+function mostrarUbicacion(position) {
+    console.log(position);
+}
+
+$("#botonGeo").on("click", mostrarUbicacion);
+
+// AJAX CON JQUERY
+
+// incorporar evento click en el boton submit
+
+$("submitBtn").click(function () {
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let contact = $("#cont").val();
+    let profile = $("#profile").val();
+
+    $.post(
+        "http://localhost:4000/api/addPerson",
+        {
+            name: name,
+            email: email,
+            cont: contact,
+            profile: profile,
+        },
+        function (response) {
+            $("#response").html(
+                "<div class='alert alert-success'>" +
+                    response.message +
+                    "</div>"
+            );
+            clearfield();
+        }
+    );
+});
+
+function clearfield() {
+    $("#name").val("");
+    $("#email").val("");
+    $("#cont").val("");
+    $("#profile").val("");
+}
+
+// MAPA
+let map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 43.5293101, lng: -5.6773233 },
+        zoom: 13,
+    });
+}
+
+let marker = new google.maps.Marker({
+    position: { lat: 43.542194, lng: -5.676875 },
+    map: map,
+    title: "Acuario de Gijón",
 });
