@@ -1,3 +1,4 @@
+// variables
 const carrito = document.getElementById("carrito");
 const platillos = document.getElementById("lista-platillos");
 const listaPlatillos = document.querySelector("#lista-carrito tbody");
@@ -7,11 +8,8 @@ cargarEventListeners();
 
 function cargarEventListeners() {
     platillos.addEventListener("click", comprarPlatillo);
-
     carrito.addEventListener("click", eliminarPlatillo);
-
     vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
-
     document.addEventListener("DOMContentLoaded", leerLocalStorage);
 }
 
@@ -37,14 +35,15 @@ function leerDatosPlatillo(platillo) {
 function insertarCarrito(platillo) {
     const row = document.createElement("tr");
     row.innerHTML = `
-  <td>
-  <img src"${platillo.imagen}" width=100>
-  </td>
-  <td>${platillo.titulo}</td>
-  <td>${platillo.precio}</td>
-  <td><a href="#" class="borrar-platillo" data-id="${platillo}">X</a>
-  </td>
-  `;
+       <td>
+           <img src="${platillo.imagen}" width=100> 
+       </td> 
+       <td>${platillo.titulo}</td>
+       <td>${platillo.precio}</td>
+       <td>
+        <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+       </td>
+    `;
     listaPlatillos.appendChild(row);
     guardarPlatilloLocalStorage(platillo);
 }
@@ -66,8 +65,8 @@ function vaciarCarrito() {
     while (listaPlatillos.firstChild) {
         listaPlatillos.removeChild(listaPlatillos.firstChild);
     }
-
     vaciarLocalStorage();
+
     return false;
 }
 
@@ -99,15 +98,15 @@ function leerLocalStorage() {
     platillosLS.forEach(function (platillo) {
         const row = document.createElement("tr");
         row.innerHTML = `
-    <td>
-    <img src="${platillo.imagen}" width=100>
-    </td>
-    <td>${platillo.titulo}</td>
-    <td>${platillo.precio}</td>
-    <td>
-    <a href="#" class"borrar-platillo" data-id="${platillo}">X</a>
-    </td>
-    `;
+            <td>
+                <img src="${platillo.imagen}" width=100>
+            </td>
+            <td>${platillo.titulo}</td>
+            <td>${platillo.precio}</td>
+            <td>
+                <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+            </td>
+        `;
         listaPlatillos.appendChild(row);
     });
 }
@@ -118,9 +117,10 @@ function eliminarPlatilloLocalStorage(platillo) {
 
     platillosLS.forEach(function (platilloLS, index) {
         if (platilloLS.id === platillo) {
-            platilloLS.splice(index, 1);
+            platillosLS.splice(index, 1);
         }
     });
+
     localStorage.setItem("platillos", JSON.stringify(platillosLS));
 }
 
@@ -130,9 +130,6 @@ function vaciarLocalStorage() {
 
 // JQUERY
 
-$("h2").css({ "background-color": "black" });
-$("#subTitle1").css({ "background-color": "black" });
-
 $("#btn-hide").click(function () {
     $("#lista-platillos").fadeIn(2000);
 });
@@ -141,27 +138,11 @@ $("#btn-show").click(function () {
     $("#lista-platillos").fadeOut(2000);
 });
 
-$("#btn-hide2").click(function () {
-    $("h1").toggleClass("blue");
-});
-
-$("#btn-show2").click(function () {
-    $("h1").toggleClass("red");
-});
-
-$("h4").css("background-color", "orange");
-$("h4").css("width", "40%");
+$("h4").css("background-color", "yellow");
+$("h4").css("width", "50%");
 $("h4").css("font-size", "20px");
-
-// GEOLOCATION
-
-let ubicacion = navigator.geolocation.getCurrentPosition(mostrarUbicacion);
-
-function mostrarUbicacion(position) {
-    console.log(position);
-}
-
-$("#botonGeo").on("click", mostrarUbicacion);
+$("h4").css("color", "black");
+$("h4").css("text-align", "center");
 
 // AJAX CON JQUERY
 
@@ -200,16 +181,28 @@ function clearfield() {
 }
 
 // MAPA
-let map;
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 43.5293101, lng: -5.6773233 },
-        zoom: 13,
+function iniciarMap() {
+    var coord = { lat: -34.6409323, lng: -58.507516 };
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: coord,
+    });
+    var marker = new google.maps.Marker({
+        position: coord,
+        map: map,
     });
 }
 
-let marker = new google.maps.Marker({
-    position: { lat: 43.542194, lng: -5.676875 },
-    map: map,
-    title: "Acuario de Gijón",
-});
+// animaciones
+
+logo.onclick = function () {
+    let start = Date.now();
+
+    let timer = setInterval(function () {
+        let timePassed = Date.now() - start;
+
+        logo.style.left = timePassed / 3 + "px";
+
+        if (timePassed > 2000) clearInterval(timer);
+    }, 20);
+};
